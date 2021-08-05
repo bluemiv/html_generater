@@ -12,7 +12,7 @@ with open(os.path.join(BASE_DIR_PATH, "values.json"), "r") as f:
     value = json.loads(f.read())
 
 
-def get_html(layout_name):
+def get_file(layout_name):
     with open(os.path.join(RESOURCES_DIR_PATH, layout_name), "r") as f:
         return f.read()
 
@@ -26,12 +26,16 @@ if __name__ == "__main__":
         print("make result directories")
         os.makedirs(RESULT_DIR_PATH)
 
-    html = get_html("index.html")
+    html = get_file("index.html")
+    css = get_file("index.css")
 
     for k, v in value.items():
         print("replace '{}'".format(k))
         html = html.replace(v["html"], v["python"])
+        css = css.replace(v["html"], v["python"])
 
-    
     with open(os.path.join(RESULT_DIR_PATH, "index.html"), "w") as f:
         f.write(html)
+
+    with open(os.path.join(RESULT_DIR_PATH, "index.css"), "w") as f:
+        f.write(css)
