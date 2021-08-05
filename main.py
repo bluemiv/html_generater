@@ -8,12 +8,12 @@ RESOURCES_DIR_PATH = os.path.join(BASE_DIR_PATH, "resources")
 RESULT_DIR_PATH = os.path.join(BASE_DIR_PATH, "result")
 
 
-with open(os.path.join(BASE_DIR_PATH, "values.json"), "r") as f:
+with open(os.path.join(BASE_DIR_PATH, "values.json"), "r", encoding="utf-8") as f:
     value = json.loads(f.read())
 
 
 def get_file(layout_name):
-    with open(os.path.join(RESOURCES_DIR_PATH, layout_name), "r") as f:
+    with open(os.path.join(RESOURCES_DIR_PATH, layout_name), "r", encoding="utf-8") as f:
         return f.read()
 
 
@@ -34,8 +34,8 @@ if __name__ == "__main__":
         html = html.replace(v["html"], v["python"])
         css = css.replace(v["html"], v["python"])
 
-    with open(os.path.join(RESULT_DIR_PATH, "index.html"), "w") as f:
+    with open(os.path.join(RESULT_DIR_PATH, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
-    with open(os.path.join(RESULT_DIR_PATH, "index.css"), "w") as f:
+    with open(os.path.join(RESULT_DIR_PATH, "index.css"), "w", encoding="utf-8") as f:
         f.write(css)
