@@ -26,7 +26,7 @@ if __name__ == "__main__":
         print("make result directories")
         os.makedirs(RESULT_DIR_PATH)
 
-    html = get_html("layout.html")
+    html = get_html("index.html")
 
     for k, v in value.items():
         print("replace '{}'".format(k))

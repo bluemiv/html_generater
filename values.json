@@ -23,6 +23,10 @@
     "html": "[##_title_##]",
     "python": "Emoji Set"
   },
+  "logo_title": {
+    "html": "[##_logo_title_##]",
+    "python": "Emoji Set"
+  },
   "description": {
     "html": "[##_description_##]",
     "python": "Easily copy and paste emojis."
