@@ -1,3 +1,3 @@
 call git add --all
-call git commit -m "^___^"
+call git commit -m "\^___\^"
 call git push
