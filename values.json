@@ -1,0 +1,46 @@
+{
+  "lang": {
+    "html": "[##_lang_##]",
+    "python": "ko"
+  },
+  "meta_charset": {
+    "html": "[##_meta_charset_##]",
+    "python": "utf-8"
+  },
+  "version": {
+    "html": "[##_version_##]",
+    "python": "0.1.0"
+  },
+  "author": {
+    "html": "[##_author_##]",
+    "python": "bluemiv"
+  },
+  "homepage": {
+    "html": "[##_homepage_##]",
+    "python": "https://taehong9301.github.io/emoji"
+  },
+  "title": {
+    "html": "[##_title_##]",
+    "python": "Emoji Set"
+  },
+  "description": {
+    "html": "[##_description_##]",
+    "python": "Easily copy and paste emojis."
+  },
+  "og_type": {
+    "html": "[##_og_type_##]",
+    "python": "website"
+  },
+  "og_img_url": {
+    "html": "[##_og_img_url_##]",
+    "python": "https://bluemiv.github.io/emoji/logo512.png"
+  },
+  "og_img_width": {
+    "html": "[##_og_img_width_##]",
+    "python": "512"
+  },
+  "og_img_height": {
+    "html": "[##_og_img_height_##]",
+    "python": "512"
+  }
+}
