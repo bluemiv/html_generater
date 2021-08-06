@@ -46,5 +46,17 @@
   "og_img_height": {
     "html": "[##_og_img_height_##]",
     "python": "512"
+  },
+  "font_color": {
+    "html": "[##_font_color_##]",
+    "python": "#212529"
+  },
+  "main_background_color": {
+    "html": "[##_main_background_color_##]",
+    "python": "#e9ecef"
+  },
+  "primary_color": {
+    "html": "[##_primary_color_##]",
+    "python": "#228be6"
   }
 }

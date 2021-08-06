@@ -8,13 +8,21 @@ RESOURCES_DIR_PATH = os.path.join(BASE_DIR_PATH, "resources")
 RESULT_DIR_PATH = os.path.join(BASE_DIR_PATH, "result")
 
 
-with open(os.path.join(BASE_DIR_PATH, "values.json"), "r", encoding="utf-8") as f:
-    value = json.loads(f.read())
-
-
-def get_file(layout_name):
+def get_file(layout_name, json_value=False):
     with open(os.path.join(RESOURCES_DIR_PATH, layout_name), "r", encoding="utf-8") as f:
+        if(json_value):
+            return json.loads(f.read())
         return f.read()
+
+
+def gen_breadcrumb():
+    breadcrumb = get_file("breadcrumb.json",json_value=True)
+    if breadcrumb["use"]:
+        html = '<ul class="breadcrumb">'
+        for item in breadcrumb["items"]:
+            html += '<li><a href="{url}">{text}</a></li>'.format(**item)
+        html += '</ul>'
+        return html
 
 
 if __name__ == "__main__":
@@ -26,8 +34,11 @@ if __name__ == "__main__":
         print("make result directories")
         os.makedirs(RESULT_DIR_PATH)
 
+    value = get_file("values.json", json_value=True)
     html = get_file("index.html")
     css = get_file("index.css")
+
+    html = html.replace("[##_breadcrumb_##]", gen_breadcrumb())
 
     for k, v in value.items():
         print("replace '{}'".format(k))
