@@ -16,14 +16,20 @@ def get_file(layout_name, json_value=False):
 
 
 def gen_breadcrumb():
-    breadcrumb = get_file("breadcrumb.json",json_value=True)
+    breadcrumb = get_file("breadcrumb.json", json_value=True)
     if breadcrumb["use"]:
-        html = '<ul class="breadcrumb">'
+        html = ''
         for item in breadcrumb["items"]:
-            html += '<li><a href="{url}">{text}</a></li>'.format(**item)
-        html += '</ul>'
+            html += '<li><a href="{url}">{text}</a></li>\n'.format(**item)
         return html
 
+def gen_emoji_container():
+    breadcrumb = get_file("emoji_container.json", json_value=True)
+    if breadcrumb["use"]:
+        html = ''
+        for item in breadcrumb["items"]:
+            html += '<li><a href="{url}">{text}</a></li>\n'.format(**item)
+        return html
 
 if __name__ == "__main__":
     print("check variable")
